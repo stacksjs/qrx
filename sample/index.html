@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sample</title>
+</head>
+<body>
+  <h1>Hello!</h1>
+  <label for="width">width</label>
+  <input id="width" value="256" onkeyup="options.width = parseInt(this.value);QRCode.setCanvas('target', options);"><br />
+  <label for="height">height</label>
+  <input id="height" value="256" onkeyup="options.height = parseInt(this.value);QRCode.setCanvas('target', options);"><br />
+  <label for="text">text</label>
+  <input id="text" value="the-value-of-qrcode" onkeyup="options.text = this.value;QRCode.setCanvas('target', options);"><br />
+  <label for="background" >background</label>
+  <input id="background" value="#ffffff" onkeyup="options.background = this.value;QRCode.setCanvas('target', options);"><br />
+  <label for="foreground">foreground</label>
+  <input id="foreground" value="#000000" onkeyup="options.foreground = this.value;QRCode.setCanvas('target', options);">
+  <div id="target" style="margin-top: 20px;"></div>
+  <script src="../bin/qrcode.min.js"></script>
+  <script>
+  var options  = {
+    width: 256,
+    height: 256,
+    correctLevel  : QRErrorCorrectLevel.H,
+    background: "#ffffff",
+    foreground: "#000000",
+    text: "the-value-of-qrcode"
+  }
+  window.onload = function() {
+    QRCode.setCanvas('target', options);
+  }
+  </script>
+</body>
+</html>
