@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.5",
-    "@shikijs/vitepress-twoslash": "^1.24.4",
+    "@shikijs/vitepress-twoslash": "^1.25.1",
     "@stacksjs/eslint-config": "^3.12.0-beta.4",
     "@types/bun": "^1.1.14",
     "bumpp": "^9.9.2",
@@ -69,7 +69,7 @@
     "vitepress": "^1.5.0"
   },
   "overrides": {
-    "unconfig": "0.3.10"
+    "unconfig": "0.6.0"
   },
   "lint-staged": {
     "*.{js,ts}": "bunx --bun eslint --flag unstable_ts_config . --fix"
