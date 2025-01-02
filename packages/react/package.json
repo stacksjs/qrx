@@ -1,0 +1,69 @@
+{
+  "name": "react-qrx",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "QR & Bar Code generating & reading. React components. Placeholder.",
+  "author": "Chris Breuer <chris@stacksjs.org>",
+  "license": "MIT",
+  "homepage": "https://github.com/stacksjs/qrx/tree/main/packages/react#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacksjs/qrx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stacksjs/qrx/issues"
+  },
+  "keywords": [
+    "typescript",
+    "qrcode",
+    "barcode",
+    "qr",
+    "bar",
+    "code",
+    "generate",
+    "read",
+    "lightweight",
+    "powerful",
+    "scanner",
+    "reader",
+    "decoder",
+    "encoder",
+    "react",
+    "stacksjs"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "import": "./dist/*"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun --bun build.ts",
+    "lint": "bunx --bun eslint --flag unstable_ts_config .",
+    "lint:fix": "bunx --bun eslint --flag unstable_ts_config . --fix",
+    "prepublishOnly": "bun --bun run build",
+    "test": "bun test",
+    "typecheck": "bun --bun tsc --noEmit"
+  },
+  "dependencies": {
+    "@stacksjs/qrx": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "lint-staged": "^15.3.0",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "bunx --bun eslint --flag unstable_ts_config . --fix"
+  }
+}
