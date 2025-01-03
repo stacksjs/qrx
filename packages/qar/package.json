@@ -73,7 +73,7 @@
     "typescript": "^5.7.2"
   },
   "overrides": {
-    "unconfig": "0.3.10"
+    "unconfig": "0.6.0"
   },
   "lint-staged": {
     "*.{js,ts}": "bunx --bun eslint --flag unstable_ts_config . --fix"
