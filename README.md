@@ -91,27 +91,27 @@ A lightweight Barcode library with zero dependencies. It supports multiple barco
 
 #### Supported Formats
 
-- [CODE128](https://github.com/lindell/JsBarcode/wiki/CODE128)
+- [CODE128](https://ts-quick-reaction.netlify.app/api/barcode/CODE128)
   - CODE128 (automatic mode switching)
   - CODE128 A/B/C (force mode)
-- [EAN](https://github.com/lindell/JsBarcode/wiki/EAN)
+- [EAN](https://ts-quick-reaction.netlify.app/api/barcode/EAN)
   - EAN-13
   - EAN-8
   - EAN-5
   - EAN-2
   - UPC (A)
   - UPC (E)
-- [CODE39](https://github.com/lindell/JsBarcode/wiki/CODE39)
-- [ITF](https://github.com/lindell/JsBarcode/wiki/ITF-14)
+- [CODE39](https://ts-quick-reaction.netlify.app/api/barcode/CODE39)
+- [ITF](https://ts-quick-reaction.netlify.app/api/barcode/ITF-14)
   - ITF
   - ITF-14
-- [MSI](https://github.com/lindell/JsBarcode/wiki/MSI)
+- [MSI](https://ts-quick-reaction.netlify.app/api/barcode/MSI)
   - MSI10
   - MSI11
   - MSI1010
   - MSI1110
-- [Pharmacode](https://github.com/lindell/JsBarcode/wiki/pharmacode)
-- [Codabar](https://github.com/lindell/JsBarcode/wiki/codabar)
+- [Pharmacode](https://ts-quick-reaction.netlify.app/api/barcode/pharmacode)
+- [Codabar](https://ts-quick-reaction.netlify.app/api/barcode/codabar)
 
 #### Browser Example
 
@@ -126,7 +126,7 @@ A lightweight Barcode library with zero dependencies. It supports multiple barco
 ##### Simple example
 
 ````javascript
-Barcode('#barcode', 'Hi!')
+barcode('#barcode', 'Hi!')
 ````
 
 ![Result](https://s3-eu-west-1.amazonaws.com/js-barcode/barcodes/simple.svg)
@@ -134,7 +134,9 @@ Barcode('#barcode', 'Hi!')
 #### Example with options
 
 ```ts
-Barcode('#barcode', '1234', {
+import { barcode } from '@stacksjs/qrx'
+
+barcode('#barcode', '1234', {
   format: 'pharmacode',
   lineColor: '#0aa',
   width: 4,
@@ -147,14 +149,16 @@ Barcode('#barcode', '1234', {
 
 #### More advanced use case
 
-````javascript
-Barcode('#barcode')
+```ts
+import { barcode } from '@stacksjs/qrx'
+
+barcode('#barcode')
   .options({ font: 'OCR-B' }) // Will affect all barcodes
   .EAN13('1234567890128', { fontSize: 18, textMargin: 0 })
   .blank(20) // Create space between the barcodes
   .EAN5('12345', { height: 85, textPosition: 'top', fontSize: 16, marginTop: 15 })
   .render()
-````
+```
 
 ![Result](https://s3-eu-west-1.amazonaws.com/js-barcode/barcodes/simple.svg)
 
@@ -163,18 +167,19 @@ Barcode('#barcode')
 Use any `barcode-*` or `data-*` as attributes where `*` is any option.
 
 ````html
-<svg class="barcode"
+<svg
+  class="barcode"
   barcode-format="upc"
   barcode-value="123456789012"
   barcode-text-margin="0"
-  barcode-font-options="bold">
-</svg>
+  barcode-font-options="bold"
+></svg>
 ````
 
 And then initialize it with:
 
 ```ts
-Barcode('.barcode').init()
+barcode('.barcode').init()
 ```
 
 ![Result](https://s3-eu-west-1.amazonaws.com/js-barcode/barcodes/init.svg)
@@ -183,9 +188,9 @@ Barcode('.barcode').init()
 
 Pass in an object which will be filled with data.
 
-```javascript
+```ts
 const data = {}
-Barcode(data, 'text', { ...options })
+barcode(data, 'text', { ...options })
 ```
 
 data will be filled with a ``` encodings ``` property which has all the needed values. See docs for examples of what data looks like.
@@ -197,12 +202,12 @@ data will be filled with a ``` encodings ``` property which has all the needed v
 #### With canvas
 
 ```ts
-import { Barcode } from '@stacksjs/qrx'
+import { barcode } from '@stacksjs/qrx'
 import { createCanvas } from 'canvas'
 
 const canvas = createCanvas()
 
-Barcode(canvas, 'Hello')
+barcode(canvas, 'Hello')
 
 // As this is a node-canvas, you can configure it as you like:
 // see https://github.com/Automattic/node-canvas for more information
@@ -230,25 +235,25 @@ For information about how to use the options, see the docs.
 
 | Option | Default value | Type |
 |--------|---------------|------|
-| [`format`](https://github.com/lindell/JsBarcode/wiki/Options#format) | `"auto" (CODE128)` | `String` |
-| [`width`](https://github.com/lindell/JsBarcode/wiki/Options#width) | `2` | `Number` |
-| [`height`](https://github.com/lindell/JsBarcode/wiki/Options#height) | `100` | `Number` |
-| [`displayValue`](https://github.com/lindell/JsBarcode/wiki/Options#display-value) | `true` | `Boolean` |
-| [`text`](https://github.com/lindell/JsBarcode/wiki/Options#text) | `undefined` | `String` |
-| [`fontOptions`](https://github.com/lindell/JsBarcode/wiki/Options#font-options) | `""` | `String` |
-| [`font`](https://github.com/lindell/JsBarcode/wiki/Options#font) | `"monospace"` | `String` |
-| [`textAlign`](https://github.com/lindell/JsBarcode/wiki/Options#text-align) | `"center"` | `String` |
-| [`textPosition`](https://github.com/lindell/JsBarcode/wiki/Options#text-position) | `"bottom"` | `String` |
-| [`textMargin`](https://github.com/lindell/JsBarcode/wiki/Options#text-margin) | `2` | `Number` |
-| [`fontSize`](https://github.com/lindell/JsBarcode/wiki/Options#font-size) | `20` | `Number` |
-| [`background`](https://github.com/lindell/JsBarcode/wiki/Options#background)  | `"#ffffff"` | `String (CSS color)` |
-| [`lineColor`](https://github.com/lindell/JsBarcode/wiki/Options#line-color) | `"#000000"` | `String (CSS color)` |
-| [`margin`](https://github.com/lindell/JsBarcode/wiki/Options#margins) | `10` | `Number` |
-| [`marginTop`](https://github.com/lindell/JsBarcode/wiki/Options#margins) | `undefined` | `Number` |
-| [`marginBottom`](https://github.com/lindell/JsBarcode/wiki/Options#margins) | `undefined` | `Number` |
-| [`marginLeft`](https://github.com/lindell/JsBarcode/wiki/Options#margins) | `undefined` | `Number` |
-| [`marginRight`](https://github.com/lindell/JsBarcode/wiki/Options#margins) | `undefined` | `Number` |
-| [`valid`](https://github.com/lindell/JsBarcode/wiki/Options#valid) | `function(valid){}` | `Function` |
+| [`format`](https://ts-quick-reaction.netlify.app/api/barcode/#format) | `"auto" (CODE128)` | `String` |
+| [`width`](https://ts-quick-reaction.netlify.app/api/barcode/#width) | `2` | `Number` |
+| [`height`](https://ts-quick-reaction.netlify.app/api/barcode/#height) | `100` | `Number` |
+| [`displayValue`](https://ts-quick-reaction.netlify.app/api/barcode/#display-value) | `true` | `Boolean` |
+| [`text`](https://ts-quick-reaction.netlify.app/api/barcode/#text) | `undefined` | `String` |
+| [`fontOptions`](https://ts-quick-reaction.netlify.app/api/barcode/#font-options) | `""` | `String` |
+| [`font`](https://ts-quick-reaction.netlify.app/api/barcode/#font) | `"monospace"` | `String` |
+| [`textAlign`](https://ts-quick-reaction.netlify.app/api/barcode/#text-align) | `"center"` | `String` |
+| [`textPosition`](https://ts-quick-reaction.netlify.app/api/barcode/#text-position) | `"bottom"` | `String` |
+| [`textMargin`](https://ts-quick-reaction.netlify.app/api/barcode/#text-margin) | `2` | `Number` |
+| [`fontSize`](https://ts-quick-reaction.netlify.app/api/barcode/#font-size) | `20` | `Number` |
+| [`background`](https://ts-quick-reaction.netlify.app/api/barcode/#background)  | `"#ffffff"` | `String (CSS color)` |
+| [`lineColor`](https://ts-quick-reaction.netlify.app/api/barcode/#line-color) | `"#000000"` | `String (CSS color)` |
+| [`margin`](https://ts-quick-reaction.netlify.app/api/barcode/#margins) | `10` | `Number` |
+| [`marginTop`](https://ts-quick-reaction.netlify.app/api/barcode/#margins) | `undefined` | `Number` |
+| [`marginBottom`](https://ts-quick-reaction.netlify.app/api/barcode/#margins) | `undefined` | `Number` |
+| [`marginLeft`](https://ts-quick-reaction.netlify.app/api/barcode/#margins) | `undefined` | `Number` |
+| [`marginRight`](https://ts-quick-reaction.netlify.app/api/barcode/#margins) | `undefined` | `Number` |
+| [`valid`](https://ts-quick-reaction.netlify.app/api/barcode/#valid) | `function(valid){}` | `Function` |
 
 ## Testing
 

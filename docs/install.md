@@ -1,8 +1,6 @@
 # Install
 
-_This is just an example of the ts-starter docs._
-
-Installing `rpx` is easy. Simply pull it in via your package manager of choice, or download the binary directly.
+Installing `qrx` is easy. Simply pull it in via your package manager of choice, or download the binary directly.
 
 ## Package Managers
 
@@ -11,44 +9,44 @@ Choose your package manager of choice:
 ::: code-group
 
 ```sh [npm]
-npm install --save-dev @stacksjs/rpx
-# npm i -d @stacksjs/rpx
+npm install @stacksjs/qrx
+# npm i @stacksjs/qrx
 
 # or, install globally via
-npm i -g @stacksjs/rpx
+npm i -g @stacksjs/qrx
 ```
 
 ```sh [bun]
-bun install --dev @stacksjs/rpx
-# bun add --dev @stacksjs/rpx
-# bun i -d @stacksjs/rpx
+bun install @stacksjs/qrx
+# bun add @stacksjs/qrx
+# bun i @stacksjs/qrx
 
 # or, install globally via
-bun add --global @stacksjs/rpx
+bun add --global @stacksjs/qrx
 ```
 
 ```sh [pnpm]
-pnpm add --save-dev @stacksjs/rpx
-# pnpm i -d @stacksjs/rpx
+pnpm add @stacksjs/qrx
+# pnpm i @stacksjs/qrx
 
 # or, install globally via
-pnpm add --global @stacksjs/rpx
+pnpm add --global @stacksjs/qrx
 ```
 
 ```sh [yarn]
-yarn add --dev @stacksjs/rpx
-# yarn i -d @stacksjs/rpx
+yarn add @stacksjs/qrx
+# yarn i -d @stacksjs/qrx
 
 # or, install globally via
-yarn global add @stacksjs/rpx
+yarn global add @stacksjs/qrx
 ```
 
 ```sh [brew]
-brew install rpx # coming soon
+brew install qrx # coming soon
 ```
 
 ```sh [pkgx]
-pkgx rpx # coming soon
+pkgx qrx # coming soon
 ```
 
 :::
@@ -63,56 +61,56 @@ Choose the binary that matches your platform and architecture:
 
 ```sh [macOS (arm64)]
 # Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-darwin-arm64 -o rpx
+curl -L https://github.com/stacksjs/qrx/releases/download/v0.1.0/qrx-darwin-arm64 -o qrx
 
 # Make it executable
-chmod +x rpx
+chmod +x qrx
 
 # Move it to your PATH
-mv rpx /usr/local/bin/rpx
+mv qrx /usr/local/bin/qrx
 ```
 
 ```sh [macOS (x64)]
 # Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-darwin-x64 -o rpx
+curl -L https://github.com/stacksjs/qrx/releases/download/v0.1.0/qrx-darwin-x64 -o qrx
 
 # Make it executable
-chmod +x rpx
+chmod +x qrx
 
 # Move it to your PATH
-mv rpx /usr/local/bin/rpx
+mv qrx /usr/local/bin/qrx
 ```
 
 ```sh [Linux (arm64)]
 # Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-linux-arm64 -o rpx
+curl -L https://github.com/stacksjs/qrx/releases/download/v0.1.0/qrx-linux-arm64 -o qrx
 
 # Make it executable
-chmod +x rpx
+chmod +x qrx
 
 # Move it to your PATH
-mv rpx /usr/local/bin/rpx
+mv qrx /usr/local/bin/qrx
 ```
 
 ```sh [Linux (x64)]
 # Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-linux-x64 -o rpx
+curl -L https://github.com/stacksjs/qrx/releases/download/v0.1.0/qrx-linux-x64 -o qrx
 
 # Make it executable
-chmod +x rpx
+chmod +x qrx
 
 # Move it to your PATH
-mv rpx /usr/local/bin/rpx
+mv qrx /usr/local/bin/qrx
 ```
 
 ```sh [Windows (x64)]
 # Download the binary
-curl -L https://github.com/stacksjs/rpx/releases/download/v0.9.1/rpx-windows-x64.exe -o rpx.exe
+curl -L https://github.com/stacksjs/qrx/releases/download/v0.1.0/qrx-windows-x64.exe -o qrx.exe
 
 # Move it to your PATH (adjust the path as needed)
-move rpx.exe C:\Windows\System32\rpx.exe
+move qrx.exe C:\Windows\System32\qrx.exe
 ```
 
 ::: tip
-You can also find the `rpx` binaries in GitHub [releases](https://github.com/stacksjs/rpx/releases).
+You can also find the `qrx` binaries in GitHub [releases](https://github.com/stacksjs/qrx/releases).
 :::

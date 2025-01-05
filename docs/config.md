@@ -9,7 +9,10 @@ import os from 'node:os'
 import path from 'node:path'
 
 const config: QrxConfig = {
-  type: 'qr',
+  /**
+   * The type of the QR code.
+   */
+  type: 'qr', // 'qr' | 'bar'
 
   options: {
     /**

@@ -2,7 +2,8 @@ import type { QrxConfig } from './types'
 import { loadConfig } from 'bunfig'
 
 export const defaults: QrxConfig = {
-  type: 'qrcode',
+  type: 'qr',
+
   options: {
     width: 100,
     height: 100,

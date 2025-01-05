@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/stacksjs/rpx/blob/main/.github/art/cover.jpg?raw=true" alt="Social Card of this repo"></p>
+<p align="center"><img src="https://github.com/stacksjs/qrx/blob/main/.github/art/cover.jpg?raw=true" alt="Social Card of this repo"></p>
 
 # qrx
 
@@ -13,25 +13,6 @@
 - 📚 **Simple**: Easy to use
 - 📖 **Documentation**: Well-documented
 - 🛠 **Library & CLI**: Interact in different ways
-
-## Install
-
-It's simple to install the library and CLI:
-
-```sh
-npm install qrx
-bun add qrx
-yarn add qrx
-pnpm add qrx
-```
-
-_Check out the package.json scripts for more commands._
-
-## Usage
-
-```sh
-QRCode.setCanvas('id-of-target-element', { text: 'qr-code-text' });
-```
 
 ## Testing
 
@@ -72,8 +53,10 @@ We would like to extend our thanks to the following sponsors for funding Stacks 
 
 ## Credits
 
+- [JsBarcode](https://github.com/lindell/JsBarcode)
+- [qrcodejs](https://github.com/davidshimjs/qrcodejs)
 - [Chris Breuer](https://github.com/chrisbbreuer)
-- [All Contributors](https://github.com/stacksjs/rpx/graphs/contributors)
+- [All Contributors](https://github.com/stacksjs/qrx/graphs/contributors)
 
 ## License
 
@@ -83,5 +66,5 @@ Made with 💙
 
 <!-- Badges -->
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/rpx/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/stacksjs/rpx -->
+<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/stacksjs/qrx/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/stacksjs/qrx -->

@@ -1,7 +1,7 @@
 interface QRCodeOptions {}
 
 export interface QrxConfig {
-  type: 'barcode' | 'qrcode'
+  type: 'bar' | 'qr'
   options: BarcodeOptions | QRCodeOptions
 }
 

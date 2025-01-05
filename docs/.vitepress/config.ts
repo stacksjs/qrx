@@ -11,7 +11,7 @@ const analyticsHead: HeadConfig[] = [
     'script',
     {
       'src': 'https://cdn.usefathom.com/script.js',
-      'data-site': 'DCOEHMGA',
+      'data-site': 'PFISGDDM',
       'defer': '',
     },
   ],
@@ -57,16 +57,30 @@ const sidebar = [
       { text: 'Install', link: '/install' },
       { text: 'Usage', link: '/usage' },
       { text: 'Config', link: '/config' },
+      { text: 'Demo', link: '/demo' },
     ],
   },
   {
     text: 'API',
     items: [
-      { text: 'Barcodes', link: '/barcodes' },
-      { text: 'QR Codes', link: '/qr-codes' },
+      {
+        text: 'Barcodes',
+        link: '/api/barcode',
+        collapsed: true,
+        items: [
+          { text: 'Codabar', link: '/api/barcode/Codabar' },
+          { text: 'CODE39', link: '/api/barcode/CODE39' },
+          { text: 'CODE128', link: '/api/barcode/CODE128' },
+          { text: 'EAN', link: '/api/barcode/EAN' },
+          { text: 'ITF-14', link: '/api/barcode/ITF-14' },
+          { text: 'MSI', link: '/api/barcode/MSI' },
+          { text: 'Pharmacode', link: '/api/barcode/Pharmacode' },
+        ],
+      },
+      { text: 'QR Codes', link: '/api/qr-code' },
     ],
   },
-  { text: 'Showcase', link: '/Showcase' },
+  { text: 'Showcase', link: '/showcase' },
 ]
 const description = 'TypeScript QR & Bar Code generating & reading. Lightweight & powerful.'
 const title = 'qrx | TypeScript QR & Bar Code generating & reading. Lightweight & powerful..'

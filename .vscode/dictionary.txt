@@ -27,6 +27,7 @@ heroicons
 iconify
 jsbarcode
 Kazuhiko
+lindell
 localtunnels
 lockb
 OCRB
@@ -34,11 +35,13 @@ openweb
 outdir
 pausable
 pharmacode
+pkgx
 Plessey
 Postcardware
 prefetch
 preinstall
 qrcode
+qrcodejs
 QRRS
 quickfix
 shikijs
