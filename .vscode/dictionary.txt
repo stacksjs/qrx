@@ -26,6 +26,7 @@ heroicons
 iconify
 jsbarcode
 Kazuhiko
+localtunnels
 lockb
 openweb
 outdir
@@ -41,7 +42,9 @@ shikijs
 socio
 Solana
 Spatie
+sponsorware
 stacksjs
+tlsx
 twoslash
 typecheck
 unconfig
