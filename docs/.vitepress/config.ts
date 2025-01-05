@@ -58,6 +58,13 @@ const sidebar = [
       { text: 'Config', link: '/config' },
     ],
   },
+  {
+    text: 'API',
+    items: [
+      { text: 'Barcodes', link: '/barcodes' },
+      { text: 'QR Codes', link: '/qr-codes' },
+    ],
+  },
   { text: 'Showcase', link: '/Showcase' },
 ]
 const description = 'TypeScript QR & Bar Code generating & reading. Lightweight & powerful.'
