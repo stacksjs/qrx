@@ -42,7 +42,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "qrx": "./dist/bin/cli.js"
+    "qrx": "./dist/cli.js"
   },
   "files": [
     "README.md",

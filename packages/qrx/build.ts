@@ -9,3 +9,12 @@ const resp = await Bun.build({
 })
 
 console.log(resp)
+
+const resp2 = await Bun.build({
+  target: 'bun',
+  entrypoints: ['./bin/cli.ts'],
+  outdir: './dist',
+  plugins: [dts()],
+})
+
+console.log(resp2)
