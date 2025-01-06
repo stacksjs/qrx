@@ -60,7 +60,7 @@
     "lint": "bunx --bun eslint --flag unstable_ts_config .",
     "lint:fix": "bunx --bun eslint --flag unstable_ts_config . --fix",
     "prepublishOnly": "bun --bun run build && bun run compile:all",
-    "release": "bun run changelog && bunx bumpp package.json --all",
+    "release": "bun publish --access public",
     "test": "bun test",
     "typecheck": "bun --bun tsc --noEmit"
   },

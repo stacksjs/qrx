@@ -55,6 +55,7 @@ export default defineConfig({
     exclude: [
       // 'vue',
       'body-scroll-lock',
+      'bunfig',
     ],
   },
 })

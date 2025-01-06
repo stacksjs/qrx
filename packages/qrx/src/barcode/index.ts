@@ -116,6 +116,7 @@ API.prototype.options = function (options) {
 
 // Will create a blank space (usually in between barcodes)
 API.prototype.blank = function (size) {
+  // eslint-disable-next-line unicorn/no-new-array
   const zeroes = new Array(size + 1).join('0')
   this._encodings.push({ data: zeroes })
   return this
@@ -128,7 +129,7 @@ API.prototype.init = function () {
     return
   }
 
-  // Make sure renderProperies is an array
+  // Make sure renderProperties is an array
   if (!Array.isArray(this._renderProperties)) {
     this._renderProperties = [this._renderProperties]
   }
@@ -138,7 +139,7 @@ API.prototype.init = function () {
     renderProperty = this._renderProperties[i]
     var options = merge(this._options, renderProperty.options)
 
-    if (options.format == 'auto') {
+    if (options.format === 'auto') {
       options.format = autoSelectBarcode()
     }
 

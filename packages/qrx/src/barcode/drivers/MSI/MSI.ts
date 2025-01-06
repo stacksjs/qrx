@@ -4,11 +4,11 @@
 import Barcode from '../barcode'
 
 class MSI extends Barcode {
-  constructor(data, options) {
+  constructor(data: string, options: any) {
     super(data, options)
   }
 
-  encode() {
+  encode(): { data: string, text: string } {
     // Start bits
     let ret = '110'
 
@@ -20,7 +20,7 @@ class MSI extends Barcode {
 
       // Add 100 for every zero and 110 for every 1
       for (let b = 0; b < bin.length; b++) {
-        ret += bin[b] == '0' ? '100' : '110'
+        ret += bin[b] === '0' ? '100' : '110'
       }
     }
 
@@ -33,15 +33,16 @@ class MSI extends Barcode {
     }
   }
 
-  valid() {
+  valid(): boolean {
     return this.data.search(/^\d+$/) !== -1
   }
 }
 
-function addZeroes(number, n) {
+function addZeroes(number: string, n: number): string {
   for (let i = 0; i < n; i++) {
     number = `0${number}`
   }
+
   return number
 }
 

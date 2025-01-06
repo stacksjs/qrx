@@ -27,21 +27,20 @@ class UPC extends Barcode {
     this.guardHeight = options.height + this.fontSize / 2 + options.textMargin
   }
 
-  valid() {
+  valid(): boolean {
     return this.data.search(/^\d{12}$/) !== -1
       && this.data[11] == checksum(this.data)
   }
 
-  encode() {
+  encode(): any {
     if (this.options.flat) {
       return this.flatEncoding()
     }
-    else {
-      return this.guardedEncoding()
-    }
+
+    return this.guardedEncoding()
   }
 
-  flatEncoding() {
+  flatEncoding(): { data: string, text: string } {
     let result = ''
 
     result += '101'
@@ -56,7 +55,7 @@ class UPC extends Barcode {
     }
   }
 
-  guardedEncoding() {
+  guardedEncoding(): any {
     const result = []
 
     // Add the first digit
@@ -115,7 +114,7 @@ class UPC extends Barcode {
 
 // Calulate the checksum digit
 // https://en.wikipedia.org/wiki/International_Article_Number_(EAN)#Calculation_of_checksum_digit
-export function checksum(number) {
+export function checksum(number: string): number {
   let result = 0
 
   let i

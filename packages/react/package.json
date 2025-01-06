@@ -50,6 +50,7 @@
     "build": "bun --bun build.ts",
     "lint": "bunx --bun eslint --flag unstable_ts_config .",
     "lint:fix": "bunx --bun eslint --flag unstable_ts_config . --fix",
+    "release": "bun publish --access public",
     "prepublishOnly": "bun --bun run build",
     "test": "bun test",
     "typecheck": "bun --bun tsc --noEmit"
