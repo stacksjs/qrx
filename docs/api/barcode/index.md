@@ -1,8 +1,8 @@
+# All Options
+
 ::: info
 Thank you to all `JsBarcode` contributors for their work. And, in particular, many thanks to [lindell](https://lindell.me/) for the groundwork!
 :::
-
-# All Options
 
 | Option | Default value | Type |
 |--------|---------------|------|

@@ -1,16 +1,20 @@
+import { defaults } from '../config'
 import barcodes from './drivers/index'
 import ErrorHandler from './exceptions/ErrorHandler'
 import { InvalidInputException, NoElementException } from './exceptions/exceptions'
-import defaults from './options/defaults'
 import { fixOptions } from './utils/fixOptions'
 import { getRenderProperties } from './utils/getRenderProperties'
 import { linearizeEncodings } from './utils/linearizeEncodings'
 import { merge } from './utils/merge'
 import optionsFromStrings from './utils/optionsFromStrings'
 
-const API = function () { }
+class API { // Ensure API is defined as a class
+  constructor() {
+    // Initialize properties if needed
+  }
+}
 
-export const barcode = function (element, text, options) {
+export const barcode = function (element: any, text: any, options: any): any {
   const api = new API()
 
   if (typeof element === 'undefined') {
@@ -189,6 +193,6 @@ function render(renderProperties: any, encodings: any[], options: any) {
 }
 
 // Export to browser
-// if (typeof window !== 'undefined') {
-//   window.barcode = barcode
-// }
+if (typeof window !== 'undefined') {
+  window.barcode = barcode
+}

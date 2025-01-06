@@ -3,9 +3,9 @@
 
 import Barcode from '../barcode'
 import { EAN5_STRUCTURE } from './constants'
-import encode from './encoder'
+import { encode } from './encoder'
 
-function checksum(data) {
+function checksum(data: string) {
   const result = data
     .split('')
     .map(n => +n)
@@ -18,15 +18,15 @@ function checksum(data) {
 }
 
 class EAN5 extends Barcode {
-  constructor(data, options) {
+  constructor(data: string, options: any) {
     super(data, options)
   }
 
-  valid() {
+  valid(): boolean {
     return this.data.search(/^\d{5}$/) !== -1
   }
 
-  encode() {
+  encode(): any {
     const structure = EAN5_STRUCTURE[checksum(this.data)]
     return {
       data: `1011${encode(this.data, structure, '01')}`,

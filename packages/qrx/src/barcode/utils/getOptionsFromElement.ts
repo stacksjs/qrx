@@ -1,4 +1,4 @@
-import defaults from '../options/defaults'
+import { defaults } from '../../config'
 import optionsFromStrings from './optionsFromStrings'
 
 function getOptionsFromElement(element: HTMLElement): any {

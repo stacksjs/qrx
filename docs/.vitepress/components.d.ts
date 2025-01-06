@@ -11,6 +11,7 @@ declare module 'vue' {
     HomeContributors: typeof import('./theme/components/HomeContributors.vue')['default']
     HomeSponsors: typeof import('./theme/components/HomeSponsors.vue')['default']
     HomeTeam: typeof import('./theme/components/HomeTeam.vue')['default']
+    QRDemo: typeof import('./theme/components/QRDemo.vue')['default']
     TeamMember: typeof import('./theme/components/TeamMember.vue')['default']
   }
 }

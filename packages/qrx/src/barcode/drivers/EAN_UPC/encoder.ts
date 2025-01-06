@@ -4,7 +4,7 @@ import { BINARIES } from './constants'
 export function encode(data: string, structure: number[], separator?: string): string {
   let encoded = data
     .split('')
-    .map((val, idx) => BINARIES[structure[idx]])
+    .map((val, idx) => BINARIES[structure[idx] as number] || '') // Ensure valid access
     .map((val, idx) => val ? val[data[idx]] : '')
 
   if (separator) {

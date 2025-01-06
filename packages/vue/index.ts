@@ -12,15 +12,18 @@ export const VueBarcode = {
       }, this.$slots.default),
     ])
   },
+
   props: {
     value: [String, Number],
     format: [String],
     width: [String, Number],
     height: [String, Number],
+
     displayValue: {
       type: [String, Boolean],
       default: true,
     },
+
     text: [String, Number],
     fontOptions: [String],
     font: [String],
@@ -37,6 +40,7 @@ export const VueBarcode = {
     marginRight: [String, Number],
     flat: [Boolean],
     ean128: [String, Boolean],
+
     elementTag: {
       type: String,
       default: 'svg',
@@ -45,10 +49,12 @@ export const VueBarcode = {
       },
     },
   },
+
   mounted() {
     this.$watch('$props', render, { deep: true, immediate: true })
     render.call(this)
   },
+
   data() {
     return { valid: true }
   },

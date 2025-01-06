@@ -1,6 +1,6 @@
 import Barcode from '../barcode'
 import { MIDDLE_BIN, SIDE_BIN } from './constants'
-import encode from './encoder'
+import { encode } from './encoder'
 
 // Base class for EAN8 & EAN13
 export class EAN extends Barcode {
