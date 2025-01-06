@@ -1,4 +1,16 @@
 
+## v0.0.2...main
+
+[compare changes](https://github.com/stacksjs/qrx/compare/v0.0.2...main)
+
+### 🏡 Chore
+
+- Wip ([efabba0](https://github.com/stacksjs/qrx/commit/efabba0))
+
+### ❤️ Contributors
+
+- Chris ([@chrisbbreuer](http://github.com/chrisbbreuer))
+
 ## v0.0.1...main
 
 [compare changes](https://github.com/stacksjs/qrx/compare/v0.0.1...main)
