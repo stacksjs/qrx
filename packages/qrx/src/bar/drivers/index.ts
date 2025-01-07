@@ -7,9 +7,11 @@ import { ITF, ITF14 } from './ITF'
 import { MSI, MSI10, MSI11, MSI1010, MSI1110 } from './MSI'
 import { Pharmacode } from './Pharmacode'
 
-type Barcode = typeof GenericBarcode
+interface BarcodeMap {
+  [key: string]: typeof GenericBarcode
+}
 
-export const barcodes: Barcode[] = {
+export const barcodes: BarcodeMap = {
   CODE39,
   CODE128,
   CODE128A,

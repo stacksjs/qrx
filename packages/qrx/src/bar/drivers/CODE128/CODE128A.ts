@@ -3,7 +3,7 @@ import { A_CHARS, A_START_CHAR } from './constants'
 
 class CODE128A extends CODE128 {
   constructor(string: string, options: any) {
-    super(A_START_CHAR + string, options) // Use 'data' instead of 'string'
+    super(A_START_CHAR + string, options)
   }
 
   valid(): boolean {

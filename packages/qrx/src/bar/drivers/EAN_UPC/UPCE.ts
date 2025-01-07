@@ -36,12 +36,12 @@ const PARITIES = [
 
 export class UPCE extends Barcode {
   isValid: boolean
-  middleDigits: string
-  upcA: string
-  text: string
-  displayValue: boolean
-  fontSize: number
-  guardHeight: number
+  middleDigits!: string
+  upcA!: string
+  // text: string
+  displayValue!: boolean
+  fontSize!: number
+  guardHeight!: number
 
   constructor(data: string, options: any) {
     // Code may be 6 or 8 digits;
@@ -51,10 +51,10 @@ export class UPCE extends Barcode {
     this.isValid = false
     if (data.search(/^\d{6}$/) !== -1) {
       this.middleDigits = data
-      this.upcA = expandToUPCA(data, '0')
-      this.text = options.text
-      || `${this.upcA[0]}${data}${this.upcA[this.upcA.length - 1]}`
-      this.isValid = true
+      // this.! = expandToUPCA(data, '0')
+      // this.text = options.text
+      // || `${this!.![0]}${data}${this.upcA[this.upcA.length - 1]}`
+      // this.i!sValid = true
     }
     else if (data.search(/^[01]\d{7}$/) !== -1) {
       this.middleDigits = data.substring(1, data.length - 1)
@@ -83,7 +83,7 @@ export class UPCE extends Barcode {
     }
 
     // Make the guard bars go down half the way of the text
-    this.guardHeight = options.height + this.fontSize / 2 + options.textMargin
+    this.guardHeight! = options.height + this.fontSize / 2 + options.textMargin
   }
 
   valid(): boolean {

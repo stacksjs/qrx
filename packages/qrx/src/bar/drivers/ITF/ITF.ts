@@ -9,7 +9,7 @@ class ITF extends Barcode {
   encode(): { text: string, data: string } {
     // Calculate all the digit pairs
     const encoded = this.data
-      .match(/.{2}/g)
+      .match(/.{2}/g) || []
       .map(pair => this.encodePair(pair))
       .join('')
 
@@ -21,9 +21,9 @@ class ITF extends Barcode {
 
   // Calculate the data of a number pair
   encodePair(pair: string): string {
-    const second = BINARIES[pair[1]]
+    const second = BINARIES[Number(pair[1])]
 
-    return BINARIES[pair[0]]
+    return BINARIES[Number(pair[0])]
       .split('')
       .map((first, idx) => (
         (first === '1' ? '111' : '1')

@@ -1,8 +1,9 @@
 import { defaults } from '../../config'
 import optionsFromStrings from './optionsFromStrings'
 
-function getOptionsFromElement(element: HTMLElement): any {
-  let options = {}
+export function getOptionsFromElement(element: HTMLElement): any {
+  let options: { [key: string]: any } = {}
+
   for (const property in defaults) {
     if (Object.prototype.hasOwnProperty.call(defaults, property)) {
       // jsbarcode-*

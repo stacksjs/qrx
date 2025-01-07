@@ -45,7 +45,7 @@ export class EAN13 extends EAN {
 
   leftEncode(): string {
     const data = this.data.substr(1, 6)
-    const structure = EAN13_STRUCTURE[this.data[0]]
+    const structure = EAN13_STRUCTURE[Number(this.data[0])]
     return super.leftEncode(data, structure)
   }
 
