@@ -31,17 +31,17 @@ export interface BarcodeSettings {
   valid: (valid: boolean) => void
 }
 
-export type BarcodeOptions = Partial<BarcodeConfig>
+export type BarcodeOptions = Partial<BarcodeSettings>
 
-interface NodeConfig extends BarcodeConfig {
+interface NodeConfig extends BarcodeSettings {
   xmlDocument: XMLDocument
 }
 
-interface NodeOptions extends BarcodeOptions {
+export interface NodeOptions extends BarcodeOptions {
   xmlDocument?: XMLDocument
 }
 
-interface Code128Config extends BarcodeConfig {
+interface Code128Config extends BarcodeSettings {
   ean128: boolean
 }
 
@@ -49,7 +49,7 @@ interface Code128Options extends BarcodeOptions {
   ean128?: boolean
 }
 
-interface Ean8Config extends BarcodeConfig {
+export interface Ean8Config extends BarcodeSettings {
   flat: boolean
 }
 
@@ -67,7 +67,7 @@ interface Ean13Options extends BarcodeOptions {
   lastChar?: string
 }
 
-export type BarcodeConfig = BarcodeConfig | Code128Config | Ean13Config | NodeConfig
+export type BarcodeConfig = BarcodeSettings | Code128Config | Ean13Config | NodeConfig
 
 export interface Barcode {
   options: (options: BarcodeConfig) => Barcode
