@@ -1,12 +1,12 @@
 import Barcode from '../barcode'
 
 class GenericBarcode extends Barcode {
-  constructor(data, options) {
+  constructor(data: string, options: any) {
     super(data, options) // Sets this.data and this.text
   }
 
   // Return the corresponding binary numbers for the data provided
-  encode() {
+  encode(): { data: string, text: string } {
     return {
       data: '10101010101010101010101010101010101010101',
       text: this.text,
@@ -14,7 +14,7 @@ class GenericBarcode extends Barcode {
   }
 
   // Return true/false if the string provided is valid for this encoder
-  valid() {
+  valid(): boolean {
     return true
   }
 }

@@ -22,15 +22,14 @@ export class ErrorHandler {
     this.api.render = function () {}
   }
 
-  wrapBarcodeCall(func: any): any {
+  wrapBarcodeCall(func: any, ...args: any[]): any {
     try {
-      const result = func(...arguments)
+      const result = func(...args)
       this.api._options.valid(true)
       return result
     }
     catch (e) {
       this.handleCatch(e)
-
       return this.api
     }
   }

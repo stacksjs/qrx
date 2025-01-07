@@ -29,7 +29,7 @@ class UPC extends Barcode {
 
   valid(): boolean {
     return this.data.search(/^\d{12}$/) !== -1
-      && this.data[11] == checksum(this.data)
+      && this.data[11] === checksum(this.data)
   }
 
   encode(): any {
