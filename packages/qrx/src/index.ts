@@ -1,4 +1,4 @@
-export * from './barcode'
+export * from './bar'
 export * from './config'
-export * from './qrcode'
+export * from './qr'
 export * from './types'

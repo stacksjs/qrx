@@ -1,5 +1,5 @@
 import { defaults } from '../config'
-import barcodes from './drivers/index'
+import { barcodes } from './drivers/index'
 import ErrorHandler from './exceptions/ErrorHandler'
 import { InvalidInputException, NoElementException } from './exceptions/exceptions'
 import { fixOptions } from './utils/fixOptions'
@@ -94,7 +94,7 @@ function encode(text, Encoder, options) {
 }
 
 function autoSelectBarcode() {
-  // If CODE128 exists. Use it
+  // default to type CODE128 if exists
   if (barcodes.CODE128) {
     return 'CODE128'
   }
