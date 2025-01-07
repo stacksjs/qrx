@@ -5,6 +5,7 @@ export function encode(data: string, structure: number[], separator?: string): s
   let encoded = data
     .split('')
     .map((val, idx) => BINARIES[structure[idx] as number] || '') // Ensure valid access
+    // @ts-expect-error should be able to improve this
     .map((val, idx) => val ? val[data[idx]] : '')
 
   if (separator) {

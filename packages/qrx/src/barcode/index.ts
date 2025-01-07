@@ -8,11 +8,7 @@ import { linearizeEncodings } from './utils/linearizeEncodings'
 import { merge } from './utils/merge'
 import optionsFromStrings from './utils/optionsFromStrings'
 
-class API { // Ensure API is defined as a class
-  constructor() {
-    // Initialize properties if needed
-  }
-}
+const API = function () { }
 
 export const barcode = function (element: any, text: any, options: any): any {
   const api = new API()
@@ -48,7 +44,7 @@ for (const name in barcodes) {
   }
 }
 
-function registerBarcode(barcodes, name) {
+function registerBarcode(barcodes: any, name: any): void {
   API.prototype[name]
     = API.prototype[name.toUpperCase()]
     = API.prototype[name.toLowerCase()]

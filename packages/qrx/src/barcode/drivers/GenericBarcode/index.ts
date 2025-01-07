@@ -1,4 +1,4 @@
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 
 class GenericBarcode extends Barcode {
   constructor(data: string, options: any) {
