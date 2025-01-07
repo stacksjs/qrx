@@ -11,6 +11,7 @@ import optionsFromStrings from './utils/optionsFromStrings'
 const API = function () { }
 
 export const barcode = function (element: any, text: any, options: any): any {
+  // @ts-expect-error - unsure right now of how we could handle this better
   const api = new API()
 
   if (typeof element === 'undefined') {
@@ -48,25 +49,24 @@ function registerBarcode(barcodes: any, name: any): void {
   API.prototype[name]
     = API.prototype[name.toUpperCase()]
     = API.prototype[name.toLowerCase()]
-    = function (text, options) {
-          const api = this
-          return api._errorHandler.wrapBarcodeCall(() => {
+    = function (text: any, options: any): any {
+          return this._errorHandler.wrapBarcodeCall(() => {
             // Ensure text is options.text
             options.text = typeof options.text === 'undefined' ? undefined : `${options.text}`
 
-            let newOptions = merge(api._options, options)
+            let newOptions = merge(this._options, options)
             newOptions = optionsFromStrings(newOptions)
             const Encoder = barcodes[name]
             const encoded = encode(text, Encoder, newOptions)
-            api._encodings.push(encoded)
+            this._encodings.push(encoded)
 
-            return api
+            return this
           })
         }
 }
 
 // encode() handles the Encoder call and builds the binary string to be rendered
-function encode(text, Encoder, options) {
+function encode(text: any, Encoder: any, options: any): any {
   // Ensure that text is a string
   text = `${text}`
 
@@ -105,13 +105,13 @@ function autoSelectBarcode() {
 
 // Sets global encoder options
 // Added to the api by the barcode function
-API.prototype.options = function (options) {
+API.prototype.options = function (options: any) {
   this._options = merge(this._options, options)
   return this
 }
 
 // Will create a blank space (usually in between barcodes)
-API.prototype.blank = function (size) {
+API.prototype.blank = function (size: any) {
   // eslint-disable-next-line unicorn/no-new-array
   const zeroes = new Array(size + 1).join('0')
   this._encodings.push({ data: zeroes })

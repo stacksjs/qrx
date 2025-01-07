@@ -1,7 +1,11 @@
 import merge from '../utils/merge'
 import { calculateEncodingAttributes, getMaximumHeightOfEncodings, getTotalWidthOfEncodings } from './shared'
 
-class CanvasRenderer {
+export class CanvasRenderer {
+  canvas: any
+  encodings: any
+  options: any
+
   constructor(canvas: any, encodings: any, options: any) {
     this.canvas = canvas
     this.encodings = encodings
