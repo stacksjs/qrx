@@ -2,7 +2,7 @@
 export const SIDE_BIN = '101'
 export const MIDDLE_BIN = '01010'
 
-export const BINARIES: { [key: string]: string[] } = { // Change type to string[]
+export const BINARIES: { [key: string]: string[] } = {
   L: [ // The L (left) type of encoding
     '0001101',
     '0011001',

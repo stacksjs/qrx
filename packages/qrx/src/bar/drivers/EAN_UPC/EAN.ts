@@ -25,19 +25,43 @@ export class EAN extends Barcode {
       : this.encodeGuarded()
   }
 
-  leftText(from: number, to: number): string {
+  leftText(from?: number, to?: number): string {
+    if (!from)
+      from = 1 // TODO: test me
+
+    if (!to)
+      to = 6
+
     return this.text.substr(from, to)
   }
 
-  leftEncode(data: any, structure: any): any {
+  leftEncode(data?: any, structure?: any): any {
+    if (!data)
+      data = this.data
+
+    if (!structure)
+      structure = this.options.structure
+
     return encode(data, structure)
   }
 
-  rightText(from: number, to: number): string {
+  rightText(from?: number, to?: number): string {
+    if (!from)
+      from = 1
+
+    if (!to)
+      to = this.data.length
+
     return this.text.substr(from, to)
   }
 
-  rightEncode(data: any, structure: any): any {
+  rightEncode(data?: any, structure?: any): any {
+    if (!data)
+      data = this.data
+
+    if (!structure)
+      structure = this.options.structure
+
     return encode(data, structure)
   }
 

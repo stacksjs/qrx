@@ -1,11 +1,15 @@
 // Encoding documentation:
 // https://en.wikipedia.org/wiki/Universal_Product_Code#Encoding
 
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 import { encode } from './encoder'
 
-class UPC extends Barcode {
-  constructor(data, options) {
+export class UPC extends Barcode {
+  displayValue: boolean
+  fontSize: number
+  guardHeight: number
+
+  constructor(data: string, options: any) {
     // Add checksum if it does not exist
     if (data.search(/^\d{11}$/) !== -1) {
       data += checksum(data)
@@ -29,7 +33,7 @@ class UPC extends Barcode {
 
   valid(): boolean {
     return this.data.search(/^\d{12}$/) !== -1
-      && this.data[11] === checksum(this.data)
+      && Number(this.data[11]) === checksum(this.data)
   }
 
   encode(): any {

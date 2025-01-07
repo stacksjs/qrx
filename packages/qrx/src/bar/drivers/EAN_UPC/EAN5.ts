@@ -14,10 +14,11 @@ function checksum(data: string) {
         ? sum + a * 9
         : sum + a * 3
     }, 0)
+
   return result % 10
 }
 
-class EAN5 extends Barcode {
+export class EAN5 extends Barcode {
   constructor(data: string, options: any) {
     super(data, options)
   }

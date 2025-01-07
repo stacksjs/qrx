@@ -1,10 +1,10 @@
 import { BINARIES } from './constants'
 
 // Encode data string
-export function encode(data: string, structure: number[], separator?: string): string {
+export function encode(data: string, structure: string, separator?: string): string {
   let encoded = data
     .split('')
-    .map((val, idx) => BINARIES[structure[idx] as number] || '') // Ensure valid access
+    .map((val, idx) => BINARIES[structure[idx]] || '') // Ensure valid access
     // @ts-expect-error should be able to improve this
     .map((val, idx) => val ? val[data[idx]] : '')
 
