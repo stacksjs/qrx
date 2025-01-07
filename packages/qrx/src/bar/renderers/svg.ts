@@ -119,7 +119,7 @@ class SVGRenderer {
         textElem.setAttribute('text-anchor', 'middle')
       }
 
-      textElem.setAttribute('x', x)
+      textElem.setAttribute('x', x.toString())
       textElem.setAttribute('y', y)
 
       textElem.appendChild(this.document.createTextNode(encoding.text))
@@ -159,10 +159,10 @@ class SVGRenderer {
   drawRect(x: number, y: number, width: number, height: number, parent: any): any {
     const rect = this.document.createElementNS(svgns, 'rect')
 
-    rect.setAttribute('x', x)
-    rect.setAttribute('y', y)
-    rect.setAttribute('width', width)
-    rect.setAttribute('height', height)
+    rect.setAttribute('x', x.toString())
+    rect.setAttribute('y', y.toString())
+    rect.setAttribute('width', width.toString())
+    rect.setAttribute('height', height.toString())
 
     parent.appendChild(rect)
 
