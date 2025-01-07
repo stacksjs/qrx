@@ -33,7 +33,6 @@
     "lint:fix": "bunx --bun eslint --flag unstable_ts_config . --fix",
     "fresh": "bunx rimraf node_modules/ bun.lock && bun i",
     "changelog": "bunx changelogen --output CHANGELOG.md",
-    "prepublishOnly": "bun --bun run build && bun run compile:all",
     "release": "bun run changelog && bunx bumpp -r --all",
     "test": "bun test",
     "dev:docs": "bun --bun vitepress dev docs",
