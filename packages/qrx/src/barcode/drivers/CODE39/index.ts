@@ -1,9 +1,9 @@
 // Encoding documentation:
 // https://en.wikipedia.org/wiki/Code_39#Encoding
 
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 
-class CODE39 extends Barcode {
+export class CODE39 extends Barcode {
   constructor(data: string, options: any) {
     data = data.toUpperCase()
 
@@ -162,5 +162,3 @@ function mod43checksum(data: string) {
   checksum = checksum % 43
   return checksum
 }
-
-export { CODE39 }

@@ -1,11 +1,11 @@
 class ObjectRenderer {
-  constructor(object, encodings, options) {
+  constructor(object: any, encodings: any, options: any) {
     this.object = object
     this.encodings = encodings
     this.options = options
   }
 
-  render() {
+  render(): void {
     this.object.encodings = this.encodings
   }
 }

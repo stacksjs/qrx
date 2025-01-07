@@ -4,7 +4,7 @@
 // UPC-E documentation:
 // https://en.wikipedia.org/wiki/Universal_Product_Code#UPC-E
 
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 import { encode } from './encoder'
 import { checksum } from './UPC'
 

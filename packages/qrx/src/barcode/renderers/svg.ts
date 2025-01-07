@@ -56,7 +56,7 @@ class SVGRenderer {
     }
   }
 
-  drawSvgBarcode(parent, options, encoding) {
+  drawSvgBarcode(parent: any, options: any, encoding: any): void {
     const binary = encoding.data
 
     // Creates the barcode out of the encoded binary
@@ -88,7 +88,7 @@ class SVGRenderer {
     }
   }
 
-  drawSVGText(parent, options, encoding): void {
+  drawSVGText(parent: any, options: any, encoding: any): void {
     const textElem = this.document.createElementNS(svgns, 'text')
 
     // Draw the text if displayValue is set
@@ -128,7 +128,7 @@ class SVGRenderer {
     }
   }
 
-  setSvgAttributes(width, height) {
+  setSvgAttributes(width: number, height: number): void {
     const svg = this.svg
     svg.setAttribute('width', `${width}px`)
     svg.setAttribute('height', `${height}px`)
@@ -142,7 +142,7 @@ class SVGRenderer {
     svg.setAttribute('style', 'transform: translate(0,0)')
   }
 
-  createGroup(x, y, parent) {
+  createGroup(x: number, y: number, parent: any): any {
     const group = this.document.createElementNS(svgns, 'g')
     group.setAttribute('transform', `translate(${x}, ${y})`)
 
@@ -151,12 +151,12 @@ class SVGRenderer {
     return group
   }
 
-  setGroupOptions(group, options) {
+  setGroupOptions(group: any, options: any): void {
     group.setAttribute('style', `fill:${options.lineColor};`,
     )
   }
 
-  drawRect(x, y, width, height, parent) {
+  drawRect(x: number, y: number, width: number, height: number, parent: any): any {
     const rect = this.document.createElementNS(svgns, 'rect')
 
     rect.setAttribute('x', x)

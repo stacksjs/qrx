@@ -1,3 +1,4 @@
 import { QRCode } from './src'
 
-const qr = new QRCode('qr-code', 'Hello, World!')
+// eslint-disable-next-line no-new
+new QRCode('qr-code', 'Hello, World!')

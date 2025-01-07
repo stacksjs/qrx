@@ -1,4 +1,4 @@
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 import { BARS, FNC1, MODULO, SET_A, SET_B, SET_BY_CODE, SHIFT, STOP } from './constants'
 
 // This is the master class,

@@ -1,7 +1,7 @@
 import { barcode } from '@stacksjs/qrx'
 
 export const VueBarcode = {
-  render(createElement) {
+  render(createElement: any): any {
     return createElement('div', [
       createElement(this.elementTag, {
         style: { display: this.valid ? undefined : 'none' },
@@ -48,19 +48,19 @@ export const VueBarcode = {
         return ['canvas', 'svg', 'img'].includes(value)
       },
     },
-  },
+  } as any,
 
-  mounted() {
+  mounted(): void {
     this.$watch('$props', render, { deep: true, immediate: true })
     render.call(this)
   },
 
-  data() {
+  data(): { valid: boolean } {
     return { valid: true }
   },
 }
 
-function render() {
+function render(): void {
   const that = this
 
   const settings = {
@@ -95,9 +95,9 @@ function render() {
   barcode(this.$el.querySelector('.vue-barcode-element'), String(this.value), settings)
 }
 
-function removeUndefinedProps(obj) {
+function removeUndefinedProps(obj: any): void {
   for (const prop in obj) {
-    if (obj.hasOwnProperty(prop) && obj[prop] === undefined) {
+    if (Object.prototype.hasOwnProperty.call(obj, prop) && obj[prop] === undefined) { // Use call to avoid direct access
       delete obj[prop]
     }
   }

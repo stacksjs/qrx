@@ -1,5 +1,5 @@
 // Encoding documentation: https://en.wikipedia.org/wiki/EAN_2#Encoding
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 import { EAN2_STRUCTURE } from './constants'
 import { encode } from './encoder'
 

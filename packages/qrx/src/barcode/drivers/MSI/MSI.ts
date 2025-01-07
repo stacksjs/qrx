@@ -1,7 +1,7 @@
 // Encoding documentation
 // https://en.wikipedia.org/wiki/MSI_Barcode#Character_set_and_binary_lookup
 
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 
 class MSI extends Barcode {
   constructor(data: string, options: any) {

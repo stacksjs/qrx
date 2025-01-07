@@ -134,10 +134,11 @@ API.prototype.init = function () {
     this._renderProperties = [this._renderProperties]
   }
 
-  let renderProperty
+  let renderProperty: any
+  let options: any
   for (const i in this._renderProperties) {
     renderProperty = this._renderProperties[i]
-    var options = merge(this._options, renderProperty.options)
+    options = merge(this._options, renderProperty.options)
 
     if (options.format === 'auto') {
       options.format = autoSelectBarcode()

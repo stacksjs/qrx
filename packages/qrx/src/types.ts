@@ -71,6 +71,6 @@ export interface Barcode {
   MSI11: (value: string, options?: BarcodeOptions) => Barcode
   MSI1010: (value: string, options?: BarcodeOptions) => Barcode
   MSI1110: (value: string, options?: BarcodeOptions) => Barcode
-  pharmacode: (value: string, options?: BarcodeOptions) => Barcode
-  codabar: (value: string, options?: BarcodeOptions) => Barcode
+  Pharmacode: (value: string, options?: BarcodeOptions) => Barcode
+  Codabar: (value: string, options?: BarcodeOptions) => Barcode
 }

@@ -1,6 +1,6 @@
 // Encoding documentation
 // http://www.gomaro.ch/ftproot/Laetus_PHARMA-CODE.pdf
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 
 export class Pharmacode extends Barcode {
   number: number

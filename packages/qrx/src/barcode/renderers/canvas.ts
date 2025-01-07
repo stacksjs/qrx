@@ -2,13 +2,13 @@ import merge from '../utils/merge'
 import { calculateEncodingAttributes, getMaximumHeightOfEncodings, getTotalWidthOfEncodings } from './shared'
 
 class CanvasRenderer {
-  constructor(canvas, encodings, options) {
+  constructor(canvas: any, encodings: any, options: any) {
     this.canvas = canvas
     this.encodings = encodings
     this.options = options
   }
 
-  render() {
+  render(): void {
     // Abort if the browser does not support HTML5 canvas
     if (!this.canvas.getContext) {
       throw new Error('The browser does not support canvas.')
@@ -27,7 +27,7 @@ class CanvasRenderer {
     this.restoreCanvas()
   }
 
-  prepareCanvas() {
+  prepareCanvas(): void {
     // Get the canvas context
     const ctx = this.canvas.getContext('2d')
 
@@ -51,7 +51,7 @@ class CanvasRenderer {
     ctx.translate(this.options.marginLeft, 0)
   }
 
-  drawCanvasBarcode(options, encoding) {
+  drawCanvasBarcode(options: any, encoding: any): void {
     // Get the canvas context
     const ctx = this.canvas.getContext('2d')
 
@@ -80,7 +80,7 @@ class CanvasRenderer {
     }
   }
 
-  drawCanvasText(options, encoding) {
+  drawCanvasText(options: any, encoding: any): void {
     // Get the canvas context
     const ctx = this.canvas.getContext('2d')
 
@@ -118,7 +118,7 @@ class CanvasRenderer {
     }
   }
 
-  moveCanvasDrawing(encoding): void {
+  moveCanvasDrawing(encoding: any): void {
     const ctx = this.canvas.getContext('2d')
 
     ctx.translate(encoding.width, 0)

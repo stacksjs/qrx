@@ -1,4 +1,4 @@
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 import { MIDDLE_BIN, SIDE_BIN } from './constants'
 import { encode } from './encoder'
 
@@ -54,7 +54,7 @@ export class EAN extends Barcode {
     ]
   }
 
-  encodeFlat() {
+  encodeFlat(): any {
     const data = [
       SIDE_BIN,
       this.leftEncode(),

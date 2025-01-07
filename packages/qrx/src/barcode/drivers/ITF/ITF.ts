@@ -1,12 +1,12 @@
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 import { BINARIES, END_BIN, START_BIN } from './constants'
 
 class ITF extends Barcode {
-  valid() {
+  valid(): boolean {
     return this.data.search(/^(\d{2})+$/) !== -1
   }
 
-  encode() {
+  encode(): { text: string, data: string } {
     // Calculate all the digit pairs
     const encoded = this.data
       .match(/.{2}/g)
@@ -20,7 +20,7 @@ class ITF extends Barcode {
   }
 
   // Calculate the data of a number pair
-  encodePair(pair) {
+  encodePair(pair: string): string {
     const second = BINARIES[pair[1]]
 
     return BINARIES[pair[0]]

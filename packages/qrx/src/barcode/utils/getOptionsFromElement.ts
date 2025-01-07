@@ -4,7 +4,7 @@ import optionsFromStrings from './optionsFromStrings'
 function getOptionsFromElement(element: HTMLElement): any {
   let options = {}
   for (const property in defaults) {
-    if (defaults.hasOwnProperty(property)) {
+    if (Object.prototype.hasOwnProperty.call(defaults, property)) {
       // jsbarcode-*
       if (element.hasAttribute(`jsbarcode-${property.toLowerCase()}`)) {
         options[property] = element.getAttribute(`jsbarcode-${property.toLowerCase()}`)

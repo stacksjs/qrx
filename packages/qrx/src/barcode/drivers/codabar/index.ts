@@ -1,9 +1,9 @@
 // Encoding specification:
 // http://www.barcodeisland.com/codabar.phtml
 
-import Barcode from '../barcode'
+import Barcode from '../Barcode'
 
-export class codabar extends Barcode {
+export class Codabar extends Barcode {
   constructor(data: string, options: any) {
     if (data.search(/^[0-9\-$:.+/]+$/) === 0) {
       data = `A${data}A`

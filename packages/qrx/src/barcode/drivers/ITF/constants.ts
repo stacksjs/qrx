@@ -1,7 +1,9 @@
 export const START_BIN = '1010'
 export const END_BIN = '11101'
 
-export const BINARIES = [
+type BinaryData = string[]
+
+export const BINARIES: BinaryData = [
   '00110',
   '10001',
   '01001',
