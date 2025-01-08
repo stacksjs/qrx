@@ -1,7 +1,8 @@
 import type { QrxConfig } from './src/types'
 
 const config: QrxConfig = {
-  type: 'barcode', // should be qr code
+  type: 'bar', // should be qr code
+
   options: {
     width: 2,
     height: 100,
