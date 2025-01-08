@@ -65,6 +65,7 @@ QRRS
 quickfix
 shikijs
 socio
+softprops
 Solana
 Spatie
 sponsorware

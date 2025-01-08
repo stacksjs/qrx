@@ -38,3 +38,15 @@ jobs:
         run: bunx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Attach Binaries
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            packages/qrx/bin/dtsx-linux-x64
+            packages/qrx/bin/dtsx-linux-arm64
+            packages/qrx/bin/dtsx-windows-x64.exe
+            packages/qrx/bin/dtsx-darwin-x64
+            packages/qrx/bin/dtsx-darwin-arm64
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
