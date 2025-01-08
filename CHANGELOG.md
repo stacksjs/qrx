@@ -1,4 +1,30 @@
 
+## v0.0.6...main
+
+[compare changes](https://github.com/stacksjs/qrx/compare/v0.0.6...main)
+
+### 🏡 Chore
+
+- Wip ([5d27117](https://github.com/stacksjs/qrx/commit/5d27117))
+- Improve vue logic ([c9ed624](https://github.com/stacksjs/qrx/commit/c9ed624))
+
+### ❤️ Contributors
+
+- Chris ([@chrisbbreuer](http://github.com/chrisbbreuer))
+
+## v0.0.6...main
+
+[compare changes](https://github.com/stacksjs/qrx/compare/v0.0.6...main)
+
+### 🏡 Chore
+
+- Wip ([5d27117](https://github.com/stacksjs/qrx/commit/5d27117))
+- Improve vue logic ([c9ed624](https://github.com/stacksjs/qrx/commit/c9ed624))
+
+### ❤️ Contributors
+
+- Chris ([@chrisbbreuer](http://github.com/chrisbbreuer))
+
 ## v0.0.5...main
 
 [compare changes](https://github.com/stacksjs/qrx/compare/v0.0.5...main)
