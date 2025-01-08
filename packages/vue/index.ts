@@ -1,24 +1,25 @@
 import type { BarcodeOptions } from '@stacksjs/qrx'
-import type { PropType } from 'vue'
+import type { Component, PropType } from 'vue'
 import { barcode } from '@stacksjs/qrx'
+import { defineComponent, h } from 'vue'
 
 interface BarcodeData {
   valid: boolean
 }
 
-export const VueBarcode = {
+export const VueBarcode: Component = defineComponent({
   name: 'VueBarcode',
 
-  render(createElement: any): any {
-    return createElement('div', [
-      createElement(this.elementTag, {
+  render() {
+    return h('div', [
+      h(this.elementTag, {
         style: { display: this.valid ? undefined : 'none' },
         class: ['vue-barcode-element'],
       }),
 
-      createElement('div', {
+      h('div', {
         style: { display: this.valid ? 'none' : undefined },
-      }, this.$slots.default),
+      }, this.$slots.default?.()),
     ])
   },
 
@@ -112,7 +113,7 @@ export const VueBarcode = {
     elementTag: {
       type: String as PropType<string>,
       default: 'svg',
-      validator(value: string) {
+      validator(value: string): boolean {
         return ['canvas', 'svg', 'img'].includes(value)
       },
     },
@@ -122,52 +123,66 @@ export const VueBarcode = {
     return { valid: true }
   },
 
-  mounted(): void {
-    this.$watch('$props', () => render.call(this), { deep: true, immediate: true })
-    render.call(this)
-  },
-} as const
-
-function render(this: InstanceType<typeof VueBarcode>): void {
-  // eslint-disable-next-line ts/no-this-alias
-  const self = this
-
-  const settings: BarcodeOptions = {
-    format: this.format,
-    width: this.width,
-    height: this.height,
-    displayValue: this.displayValue,
-    text: this.text,
-    fontOptions: this.fontOptions,
-    font: this.font,
-    textAlign: this.textAlign,
-    textPosition: this.textPosition,
-    textMargin: this.textMargin,
-    fontSize: this.fontSize,
-    background: this.background,
-    lineColor: this.lineColor,
-    margin: this.margin,
-    marginTop: this.marginTop,
-    marginBottom: this.marginBottom,
-    marginLeft: this.marginLeft,
-    marginRight: this.marginRight,
-    flat: this.flat,
-    ean128: this.ean128,
-    valid(valid: boolean) {
-      self.valid = valid
+  watch: {
+    $props: {
+      handler() {
+        this.renderBarcode()
+      },
+      deep: true,
+      immediate: true,
     },
-    elementTag: this.elementTag,
-  }
+  },
 
-  removeUndefinedProps(settings)
+  mounted() {
+    this.renderBarcode()
+  },
 
-  barcode(this.$el.querySelector('.vue-barcode-element'), String(this.value), settings)
-}
+  methods: {
+    renderBarcode() {
+      const settings: BarcodeOptions = {
+        format: this.format,
+        width: this.width,
+        height: this.height,
+        displayValue: this.displayValue,
+        text: this.text,
+        fontOptions: this.fontOptions,
+        font: this.font,
+        textAlign: this.textAlign,
+        textPosition: this.textPosition,
+        textMargin: this.textMargin,
+        fontSize: this.fontSize,
+        background: this.background,
+        lineColor: this.lineColor,
+        margin: this.margin,
+        marginTop: this.marginTop,
+        marginBottom: this.marginBottom,
+        marginLeft: this.marginLeft,
+        marginRight: this.marginRight,
+        flat: this.flat,
+        ean128: this.ean128,
+        valid: (valid: boolean) => {
+          this.valid = valid
+        },
+        elementTag: this.elementTag,
+      }
 
-function removeUndefinedProps(obj: BarcodeOptions): void {
-  for (const prop in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, prop) && obj[prop] === undefined) {
-      delete obj[prop]
-    }
-  }
-}
+      this.removeUndefinedProps(settings)
+
+      const element = this.$el.querySelector('.vue-barcode-element')
+      if (element) {
+        barcode(element, String(this.value), settings)
+      }
+    },
+
+    removeUndefinedProps(obj: BarcodeOptions): void {
+      for (const prop in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+          const value = obj[prop as keyof BarcodeOptions]
+          if (value === undefined) {
+            delete obj[prop as keyof BarcodeOptions]
+          }
+        }
+      }
+    },
+  },
+})
