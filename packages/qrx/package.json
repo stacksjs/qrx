@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "get-pixels": "^3.3.3",
-    "gl-matrix": "^3.4.3",
+    "gl-matrix": "^3.4.4",
     "lodash": "^4.17.21",
     "ndarray": "^1.0.19",
     "ndarray-linear-interpolate": "^1.0.0"
@@ -81,9 +81,9 @@
   "devDependencies": {
     "@types/bun": "^1.1.14",
     "bun-plugin-dtsx": "^0.21.9",
-    "bunfig": "^0.5.2",
+    "bunfig": "^0.15.0",
     "lint-staged": "^16.2.3",
-    "simple-git-hooks": "^2.11.1",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "^5.7.2"
   },
   "lint-staged": {
